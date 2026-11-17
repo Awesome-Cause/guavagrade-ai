@@ -57,10 +57,12 @@ Or in `~/.codex/config.toml`, then run `codex mcp login guavagrade`:
 url = "https://guavagrade.com/mcp"
 ```
 
-To get the fix skill too, add this repository as a plugin marketplace and install GuavaGrade from the Plugins directory:
+Or install the plugin, which adds the server and the `guavagrade` fix skill. It also appears in the ChatGPT desktop app's Plugins directory:
 
 ```sh
 codex plugin marketplace add Awesome-Cause/guavagrade-ai
+codex plugin add guavagrade@guavagrade-ai
+codex mcp login guavagrade
 ```
 
 ## Amp

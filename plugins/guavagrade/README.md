@@ -17,7 +17,12 @@ The plugin adds two things:
    claude plugin install guavagrade@guavagrade-ai
    ```
 
-   In Codex, run `codex plugin marketplace add Awesome-Cause/guavagrade-ai` and install GuavaGrade from the Plugins directory.
+   In Codex:
+
+   ```sh
+   codex plugin marketplace add Awesome-Cause/guavagrade-ai
+   codex plugin add guavagrade@guavagrade-ai
+   ```
 3. Sign in with your GuavaGrade account when your AI tool asks, and click Allow.
 4. Ask your AI to "fix the top problems in my GuavaGrade report".
 
