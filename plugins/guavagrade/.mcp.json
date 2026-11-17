@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "guavagrade": {
+      "type": "http",
+      "url": "https://guavagrade.com/mcp"
+    }
+  }
+}

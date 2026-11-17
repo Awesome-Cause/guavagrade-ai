@@ -1,0 +1,37 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "guavagrade",
+  "version": "1.0.0",
+  "description": "Read your GuavaGrade website reports and fix the problems in your site's code.",
+  "author": {
+    "name": "GuavaGrade",
+    "email": "hello@guavagrade.com",
+    "url": "https://guavagrade.com"
+  },
+  "homepage": "https://guavagrade.com/ai",
+  "repository": "https://github.com/Awesome-Cause/guavagrade-ai",
+  "license": "MIT",
+  "keywords": ["accessibility", "website", "wcag", "security", "seo", "performance", "wordpress"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "GuavaGrade",
+        "shortDescription": "Fix your website from its GuavaGrade report",
+        "longDescription": "Reads your GuavaGrade full reports: grades, top fixes, accessibility issues with their failing elements, and findings for security, speed, search and more. Your AI uses them to fix the problems in your site's code. It can't start checks or change your reports.",
+        "developerName": "GuavaGrade",
+        "category": "Productivity",
+        "capabilities": ["Read"],
+        "websiteURL": "https://guavagrade.com/ai",
+        "privacyPolicyURL": "https://guavagrade.com/privacy",
+        "termsOfServiceURL": "https://guavagrade.com/terms",
+        "defaultPrompt": [
+          "Use GuavaGrade to fix the top problems in my website report.",
+          "Use GuavaGrade to find and fix the accessibility issues on my site.",
+          "Use GuavaGrade to explain my website's grades."
+        ],
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png"
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "guavagrade",
+  "version": "1.0.0",
+  "description": "Read your GuavaGrade website reports and fix the problems in your site's code.",
+  "author": {
+    "name": "GuavaGrade",
+    "email": "hello@guavagrade.com",
+    "url": "https://guavagrade.com"
+  },
+  "homepage": "https://guavagrade.com/ai",
+  "repository": "https://github.com/Awesome-Cause/guavagrade-ai",
+  "license": "MIT",
+  "keywords": [
+    "accessibility",
+    "website",
+    "wcag",
+    "security",
+    "seo",
+    "performance",
+    "wordpress"
+  ],
+  "privacyPolicyUrl": "https://guavagrade.com/privacy"
+}

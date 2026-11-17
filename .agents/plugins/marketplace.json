@@ -1,0 +1,20 @@
+{
+  "name": "guavagrade-ai",
+  "interface": {
+    "displayName": "GuavaGrade"
+  },
+  "plugins": [
+    {
+      "name": "guavagrade",
+      "source": {
+        "source": "local",
+        "path": "./plugins/guavagrade"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

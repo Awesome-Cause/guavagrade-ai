@@ -1,0 +1,17 @@
+name: Check
+on:
+  push:
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Skill copies match
+        run: diff -u skills/guavagrade/SKILL.md plugins/guavagrade/skills/guavagrade/SKILL.md
+      - name: JSON is valid
+        run: find . -name '*.json' -not -path './.git/*' -print0 | xargs -0 -n1 jq empty
+      - name: Claude plugin and marketplace validate
+        run: |
+          npx -y @anthropic-ai/claude-code@latest plugin validate .
+          npx -y @anthropic-ai/claude-code@latest plugin validate plugins/guavagrade
