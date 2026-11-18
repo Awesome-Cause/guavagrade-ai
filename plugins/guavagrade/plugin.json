@@ -11,17 +11,30 @@
   "homepage": "https://guavagrade.com/ai",
   "repository": "https://github.com/Awesome-Cause/guavagrade-ai",
   "license": "MIT",
-  "keywords": ["accessibility", "website", "wcag", "security", "seo", "performance", "wordpress"],
+  "keywords": [
+    "accessibility",
+    "website",
+    "wcag",
+    "security",
+    "seo",
+    "performance",
+    "wordpress"
+  ],
   "extensions": {
     "com.openai": {
       "interface": {
         "displayName": "GuavaGrade",
-        "shortDescription": "Fix your website from its GuavaGrade report",
+        "shortDescription": "Fix your site from its report",
         "longDescription": "Reads your GuavaGrade full reports: grades, top fixes, accessibility issues with their failing elements, and findings for security, speed, search and more. Your AI uses them to fix the problems in your site's code. It can't start checks or change your reports.",
         "developerName": "GuavaGrade",
         "category": "Productivity",
-        "capabilities": ["Read"],
+        "capabilities": [
+          "Read website reports",
+          "Read accessibility issues and failing elements",
+          "Read findings and recommended fixes"
+        ],
         "websiteURL": "https://guavagrade.com/ai",
+        "supportURL": "https://guavagrade.com/faq",
         "privacyPolicyURL": "https://guavagrade.com/privacy",
         "termsOfServiceURL": "https://guavagrade.com/terms",
         "defaultPrompt": [
@@ -31,6 +44,61 @@
         ],
         "composerIcon": "./assets/icon.png",
         "logo": "./assets/icon.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "List the account's reports",
+              "prompt": "List my GuavaGrade reports.",
+              "tools_triggered": "list_reports",
+              "expected_behavior": "Lists the test account's full report with its website, status and overall grade."
+            },
+            {
+              "description": "Read the top fixes",
+              "prompt": "What are the top fixes in my GuavaGrade report?",
+              "tools_triggered": "list_reports, get_report",
+              "expected_behavior": "Returns the report's top fixes in priority order, with the overall and area grades."
+            },
+            {
+              "description": "Filter accessibility issues by impact",
+              "prompt": "Which accessibility issues on my site are high impact?",
+              "tools_triggered": "list_reports, list_issues",
+              "expected_behavior": "Lists only the accessibility issues with High impact, with how many pages each one is on."
+            },
+            {
+              "description": "Show the failing elements for one issue",
+              "prompt": "Show me the failing elements for the top accessibility issue.",
+              "tools_triggered": "list_issues, get_issue",
+              "expected_behavior": "Returns the pages the issue is on and each failing element's CSS selector and HTML."
+            },
+            {
+              "description": "Read one area's findings",
+              "prompt": "What did GuavaGrade find in the security area of my report?",
+              "tools_triggered": "list_reports, get_section",
+              "expected_behavior": "Returns the security area's grade, findings, evidence and recommended solutions."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Starting a check is not supported. No tool starts checks; the assistant explains that checks run on guavagrade.com.",
+              "prompt": "Start a new check of my website."
+            },
+            {
+              "description": "Reports outside the connected account are not available. get_report says no report with that ID belongs to the account.",
+              "prompt": "Show me GuavaGrade report audit_doesnotexist."
+            },
+            {
+              "description": "Compliance claims are not supported. The assistant says automated checks find many problems but not all, and does not call the site compliant.",
+              "prompt": "Is my site ADA compliant now?"
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "This plugin does not sell anything or process payments."
+      },
+      "publication": {
+        "release_notes": "First release: read-only access to your GuavaGrade reports, accessibility issues and findings."
       }
     }
   }
