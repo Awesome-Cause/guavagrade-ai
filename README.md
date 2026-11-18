@@ -118,15 +118,21 @@ Or in `opencode.jsonc`:
 
 To add the fix skill, copy `skills/guavagrade` into `~/.config/opencode/skills/`, or into `.opencode/skills/` or `.agents/skills/` in your project.
 
-## Cursor, VS Code and other MCP clients
+## Cursor
 
-Any app that supports remote MCP servers with OAuth sign-in connects with the same address.
+Click **Add to Cursor** at [guavagrade.com/ai](https://guavagrade.com/ai). Cursor opens and asks to install the server; sign in when it asks.
 
-Cursor (`~/.cursor/mcp.json`):
+Or add it to `~/.cursor/mcp.json`:
 
 ```json
 { "mcpServers": { "guavagrade": { "url": "https://guavagrade.com/mcp" } } }
 ```
+
+This repository is also a Cursor plugin marketplace. Teams can import it in the Cursor dashboard under Plugins & MCPs, which adds the server and the `guavagrade` fix skill.
+
+## VS Code and other MCP clients
+
+Any app that supports remote MCP servers with OAuth sign-in connects with the same address.
 
 VS Code (`.vscode/mcp.json`):
 
@@ -153,7 +159,8 @@ Every tool is read-only. Automated checks find many problems, not all of them, a
 | --- | --- |
 | `.claude-plugin/marketplace.json` | Claude Code plugin marketplace (also read by the ChatGPT desktop app) |
 | `.agents/plugins/marketplace.json` | Codex and ChatGPT desktop plugin marketplace |
-| `plugins/guavagrade/` | The plugin: manifests for Claude and OpenAI, the MCP server, the skill and the icon |
+| `.cursor-plugin/marketplace.json` | Cursor plugin marketplace |
+| `plugins/guavagrade/` | The plugin: manifests for Claude, OpenAI and Cursor, the MCP server, the skill and the icon |
 | `skills/guavagrade/` | The fix skill on its own for Amp, Command Code, OpenCode and other Agent Skills tools. Its `mcpServers` frontmatter gives Amp the server; other tools ignore it |
 
 `skills/guavagrade/SKILL.md` and `plugins/guavagrade/skills/guavagrade/SKILL.md` must stay identical; CI checks this.

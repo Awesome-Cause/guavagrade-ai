@@ -1,0 +1,19 @@
+{
+  "name": "guavagrade",
+  "displayName": "GuavaGrade",
+  "version": "1.0.0",
+  "description": "Read your GuavaGrade website reports and fix the problems in your site's code.",
+  "author": {
+    "name": "GuavaGrade",
+    "email": "hello@guavagrade.com"
+  },
+  "publisher": "GuavaGrade",
+  "homepage": "https://guavagrade.com/ai",
+  "repository": "https://github.com/Awesome-Cause/guavagrade-ai",
+  "license": "MIT",
+  "logo": "assets/icon.png",
+  "keywords": ["accessibility", "website", "wcag", "security", "seo", "performance", "wordpress", "mcp"],
+  "category": "integrations",
+  "tags": ["accessibility", "website", "mcp"],
+  "mcpServers": "./.mcp.json"
+}

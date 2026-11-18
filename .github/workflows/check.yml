@@ -11,6 +11,14 @@ jobs:
         run: diff -u skills/guavagrade/SKILL.md plugins/guavagrade/skills/guavagrade/SKILL.md
       - name: JSON is valid
         run: find . -name '*.json' -not -path './.git/*' -print0 | xargs -0 -n1 jq empty
+      - name: Cursor plugin and marketplace match Cursor's schemas
+        run: |
+          base=https://raw.githubusercontent.com/cursor/plugins/main/schemas
+          curl -fsSL -o /tmp/plugin.schema.json "$base/plugin.schema.json"
+          curl -fsSL -o /tmp/marketplace.schema.json "$base/marketplace.schema.json"
+          ajv="npx -y -p ajv-cli@5 -p ajv-formats@3 ajv validate --strict=false -c ajv-formats"
+          $ajv -s /tmp/plugin.schema.json -d plugins/guavagrade/.cursor-plugin/plugin.json
+          $ajv -s /tmp/marketplace.schema.json -d .cursor-plugin/marketplace.json
       - name: Claude plugin and marketplace validate
         run: |
           npx -y @anthropic-ai/claude-code@latest plugin validate .

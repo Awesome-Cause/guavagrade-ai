@@ -1,0 +1,17 @@
+{
+  "name": "guavagrade-ai",
+  "owner": {
+    "name": "GuavaGrade",
+    "email": "hello@guavagrade.com"
+  },
+  "metadata": {
+    "description": "GuavaGrade for AI coding tools: read your website reports and fix the problems in your code."
+  },
+  "plugins": [
+    {
+      "name": "guavagrade",
+      "source": "./plugins/guavagrade",
+      "description": "Read your GuavaGrade website reports and fix the problems in your site's code."
+    }
+  ]
+}
